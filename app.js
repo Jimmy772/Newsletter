@@ -1,9 +1,12 @@
 // jshint esversion:11
 const express = require('express');
+require('dotenv').config();
 const bodyParser = require('body-parser');
 const mailchimp = require('@mailchimp/mailchimp_marketing');
-const serverPrefix = 'us12';
-const apiKey = '80c1bb5db0bae97fa6ac14223464f167-us12';
+const serverPrefix = process.env.SERVER_PREFIX;
+const apiKey = process.env.API_KEY;
+const listId = process.env.LIST_ID;
+
 
 mailchimp.setConfig({
     apiKey: apiKey,
